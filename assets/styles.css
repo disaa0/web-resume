@@ -1,0 +1,140 @@
+:root {
+    --bs-font-sans-serif: Roboto, sans-serif;
+    --bs-body-font-weight: 400;
+    --bs-body-color: #252525;
+    --bs-body-color-rgb: 133, 133, 133;
+    --light-color: #D9D9D9;
+    --bs-body-font-size: 1.2rem;
+}
+
+a {
+    word-break: break-word;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    color: #000000;
+}
+
+@media print {
+    :root {
+        --bs-body-color: #000;
+    }
+
+    body {
+        font-size: 0.7rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .page {
+        min-width: 100%;
+    }
+
+    .screen {
+        display: none;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .badge {
+        border: 0.07rem solid #868e96;
+        color: inherit;
+        background-color: inherit;
+    }
+
+    .print-url {
+        color: #deeef9;
+        text-decoration: none;
+        font-size: smaller;
+    }
+
+    .text-print-right {
+        text-align: right;
+    }
+}
+
+@media not print {
+    .page {
+        padding: 2rem;
+    }
+
+    .print {
+        display: none;
+    }
+
+    h2 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    dt {
+        font-weight: normal;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+.far,
+.fab,
+.fas,
+.fa {
+    text-decoration: none !important;
+    margin-right: 5px;
+}
+
+.badge {
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+}
+
+@media print {
+    .col-print-1 {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+
+    .col-print-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .border-print-0 {
+        border-width: 0 !important;
+    }
+
+    .pb-print-0 {
+        padding-bottom: 0 !important;
+    }
+
+    .mb-print-1 {
+        margin-bottom: 1rem !important;
+    }
+}
+
+.fact-icon {
+    width: 1em;
+    color: var(--light-color);
+    margin-right: 0.5rem;
+}
+
+@page {
+    size: auto;
+    margin: 10mm;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+}
+
