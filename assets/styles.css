@@ -3,7 +3,7 @@
     --bs-body-font-weight: 400;
     --bs-body-color: #252525;
     --bs-body-color-rgb: 133, 133, 133;
-    --light-color: #D9D9D9;
+    --light-color: #8c8c8c;
     --bs-body-font-size: 1.2rem;
 }
 
@@ -29,6 +29,27 @@ h1, h2, h3, h4 {
         text-decoration: underline;
     }
 
+    p {
+        margin-bottom: 0;
+    }
+
+    .mb-print-05{
+        margin-bottom: 0.5rem !important;
+    }
+
+    .print-h2 {
+        font-size: 1.2rem !important;
+        --bs-border-width: 1px;
+        --bs-border-opacity: 1;
+        --bs-border-color: #252525;
+        border-color: rgba(var(--bs-dark-rgb),var(--bs-border-opacity)) !important;
+        border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    }
+
+    .print-h4 {
+        font-size: 1rem !important;
+    }
+
     .page {
         min-width: 100%;
     }
@@ -47,7 +68,7 @@ h1, h2, h3, h4 {
 
     .badge {
         border: 0.07rem solid #868e96;
-        color: inherit;
+        color: var(--dark-color) !important;
         background-color: inherit;
     }
 
@@ -72,7 +93,6 @@ h1, h2, h3, h4 {
     }
 
     h2 {
-        margin-top: 2rem;
         margin-bottom: 1rem;
     }
 
@@ -82,6 +102,11 @@ h1, h2, h3, h4 {
 
     strong {
         font-weight: 500;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -131,10 +156,5 @@ h1, h2, h3, h4 {
 @page {
     size: auto;
     margin: 10mm;
-}
-
-.skills-container {
-    display: flex;
-    justify-content: space-between;
 }
 
