@@ -3,6 +3,8 @@
 - generates an static html and a pdf version of your resume, allowing easy customization through provided assets.
 - deploys and publishes website to branch `gh-pages`
 
+demo: https://disaa0.github.io/web-resume-template/
+
 ## how to use
 1. edit the files in the `assets` folder:
 2. run `app.py`
