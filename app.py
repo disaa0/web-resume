@@ -55,22 +55,23 @@ async def url_to_pdf(url, output_path):
             )
         await browser.close()
 
-assets_path = "./assets/"
-output_path = "./dist/"
+if __name__ == "__main__":
+    assets_path = "./assets/"
+    output_path = "./dist/"
 
-template = env.get_template("index.html")
-data = read_data('assets/metadata.yaml')
-updated = get_updated()
-pdf_name = data["pdf_name"]
+    template = env.get_template("index.html")
+    data = read_data('assets/metadata.yaml')
+    updated = get_updated()
+    pdf_name = data["pdf_name"]
 
-resume = template.render(data=data, updated=updated)
+    resume = template.render(data=data, updated=updated)
 
-remove_dir(output_path)
-os.mkdir(output_path)
+    remove_dir(output_path)
+    os.mkdir(output_path)
 
-write_html (resume, output_path)
+    write_html (resume, output_path)
 
-copy_assets(assets_path, output_path)
+    copy_assets(assets_path, output_path)
 
-index_path = os.path.abspath(output_path+'index.html')
-asyncio.run(url_to_pdf(index_path, output_path=output_path + pdf_name))
+    index_path = os.path.abspath(output_path+'index.html')
+    asyncio.run(url_to_pdf(index_path, output_path=output_path + pdf_name))
