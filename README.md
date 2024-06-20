@@ -1,6 +1,7 @@
 # static web resume template
 - this project is a web-based resume template application built using Python and Jinja2.
 - generates an static html and a pdf version of your resume, allowing easy customization through provided assets.
+- deploys and publishes website to branch `gh-pages`
 
 ## how to use
 1. edit the files in the `assets` folder:
@@ -9,24 +10,20 @@
 
 ## installation
 
-1. **clone the repository**
-
-    ```sh
-    git clone https://github.com/disaa0/resume-template.git
-    cd web-resume-template
-    ```
-
-2. **create and activate virtual environment**
+1. **create a new repo using this template**
+2. **clone the previously created repo**
+3. **create and activate virtual environment**
 
     ```sh
     python -m venv .venv
     source .venv/bin/activate
     ```
 
-3. **install dependencies**
+4. **install dependencies**
 
     install the necessary python packages:
 
     ```sh
     pip install -r requirements.txt
+    playwright install
     ```
