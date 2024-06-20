@@ -1,0 +1,80 @@
+# yaml-language-server: $schema=https://json.schemastore.org/yamllint.json
+name: Joe Doe
+title: Software Engineer
+pdf_name: joe-doe.pdf
+cv_link: joedoe.github.io/cv
+facts:
+    - title: Residence
+      url: https://maps.app.goo.gl/UCupEfpjguBUrz1D9
+      icon: <i class="fa fa-home fact-icon">
+      text: New York
+    - title: GitHub
+      url: https://github.com/joedoe
+      icon: <i class="fa-brands fa-github fact-icon">
+      text: joe_doe
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/joedoe/
+      icon: <i class="fa-brands fa-linkedin fact-icon">
+      text: joe_doe
+    - title: Email
+      url: mailto:joedoe@mail.com
+      icon: <i class="fa fa-envelope fact-icon">
+      text: joe@mail.com
+
+jobs:
+  - position: Software Developer
+    period: June 2020 - Present
+    company: Tech Solutions Inc.
+    bullet_points:
+      - Developed and maintained web applications using Python and Django.
+      - Collaborated with cross-functional teams to design, develop, and implement new features.
+      - Implemented automated testing and continuous integration using Jenkins.
+    technology:
+      - Python
+      - Django
+      - Jenkins
+  - position: Junior Developer
+    period: January 2018 - May 2020
+    company: CodeCraft
+    bullet_points:
+      - Assisted in the development of internal tools using JavaScript and Node.js.
+      - Participated in code reviews and provided constructive feedback to peers.
+      - Helped maintain code quality and organization.
+    technology:
+      - JavaScript
+      - Node.js
+      - Git
+
+educations:
+    - degree: Bachelor of Science in Computer Science
+      period: September 2014 - June 2018
+      university: University of Example
+      projects: 
+        - title: Inventory Management System
+          position: Lead Developer
+          period: January 2017 - May 2017
+          skills: ['MongoDB', 'Python', 'React']
+          git: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
+          contents: 
+            I developed an inventory management system for a local business, improving their inventory tracking and reporting capabilities.
+        - title: Personal Portfolio Website
+          position: Developer
+          period: September 2016 - December 2016
+          skills: ['Python', 'Flask']
+          git: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
+          contents:
+            I developed my personal portfolio website, showcasing my projects and skills.
+
+skills:
+    - Strong problem-solving skills and ability to work in a team environment.
+    - Eagerness to acquire new skills and knowledge.
+    - Excellent communication and collaboration skills.
+    - Experience in agile development methodologies.
+
+tech_skills:
+    - title: Programming Languages
+      text: Python, Java, C++
+    - title: Version Control
+      text: Git, GitHub
+    - title: Languages
+      text: 'Spanish: Native, English: Professional Fluency'

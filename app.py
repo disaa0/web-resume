@@ -1,4 +1,4 @@
-import yaml, shutil, os, asyncio
+import yaml, shutil, os, asyncio, shutil
 from datetime import datetime
 from jinja2 import Environment, PackageLoader, select_autoescape
 from playwright.async_api import async_playwright
@@ -17,7 +17,12 @@ def get_updated():
     updated = date_string = now.strftime("%B %d, %Y")
     return updated
 
-def write_html(file: str, output_path: str): 
+
+def remove_dir(output_path: str):
+    if os.path.isdir(output_path):
+        shutil.rmtree(output_path)
+
+def write_html(file: str, output_path: str):
     with open(output_path + 'index.html', 'w') as f:
         f.write(file)
 
@@ -54,14 +59,14 @@ assets_path = "./assets/"
 output_path = "./dist/"
 
 template = env.get_template("index.html")
-data = read_data('assets/metadata')
+data = read_data('assets/metadata.yaml')
 updated = get_updated()
 pdf_name = data["pdf_name"]
 
 resume = template.render(data=data, updated=updated)
 
-if not os.path.exists(output_path):
-        os.mkdir(output_path)
+remove_dir(output_path)
+os.mkdir(output_path)
 
 write_html (resume, output_path)
 
