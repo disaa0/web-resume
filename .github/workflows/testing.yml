@@ -1,17 +1,21 @@
-name: Publish to GH Pages
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: testing
 
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
 
     steps:
     - uses: actions/checkout@v4
@@ -24,12 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         playwright install
-    - name: run application
+    - name: Unit testing
       run: |
-        python app.py
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: dist
-
+        python -m unittest discover tests

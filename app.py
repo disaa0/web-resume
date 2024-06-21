@@ -55,9 +55,10 @@ async def url_to_pdf(url, output_path):
             )
         await browser.close()
 
+assets_path = "./assets/"
+output_path = "./dist/"
+templates_path = "./templates/"
 if __name__ == "__main__":
-    assets_path = "./assets/"
-    output_path = "./dist/"
 
     template = env.get_template("index.html")
     data = read_data('assets/metadata.yaml')
