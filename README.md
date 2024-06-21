@@ -1,29 +1,33 @@
-# static web resume template
-- this project is a web-based resume template application built using Python and Jinja2.
-- generates an static html and a pdf version of your resume, allowing easy customization through provided assets.
-- deploys and publishes website to branch `gh-pages`
+# Static Web Resume
+- Web-based resume template built using Python, Jinja2 as web template engine and Playwright Chromium for PDF generation.
+- Generates a static website and a pdf of your resume, allowing easy customization through provided assets.
+- Deploys and publishes website to branch `gh-pages`.
 
-demo: https://disaa0.github.io/web-resume-template/
+Demo: https://disaa0.github.io/web-resume-template/
 
-## how to use
-1. edit the files in the `assets` folder:
-2. run `app.py`
-3. files are generated in `dist` folder.
+## How to use
+1. Set up your own files in the `assets` folder.
+2. Modify `templates/index.html` and `assets/styles.css` to your liking.
+4. Run `app.py` in your virtual environment.
+5. Files are generated to `dist` folder.
+6. Website is deployed to Github Pages using branch `gh-pages`
+7. You can access your website in https://`[github_username]`.github.io/`[repository_name]`
+   - Note: naming the repository `[github_username].github.io` will publish the website to https://`[github_username]`.github.io
 
-## installation
+## Installation
 
-1. **create a new repo using this template**
-2. **clone the previously created repo**
-3. **create and activate virtual environment**
+1. **Create a new repo using this template**.
+2. **Clone the previously created repo**.
+3. **Create and activate virtual environment**.
 
     ```sh
     python -m venv .venv
     source .venv/bin/activate
     ```
 
-4. **install dependencies**
+4. **Install dependencies**.
 
-    install the necessary python packages:
+    Install the necessary python packages:
 
     ```sh
     pip install -r requirements.txt
