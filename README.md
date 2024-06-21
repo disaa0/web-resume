@@ -1,4 +1,4 @@
-# Static Web Resume
+# Web Resume builder
 - Web-based resume template built using Python, Jinja2 as web template engine and Playwright Chromium for PDF generation.
 - Generates a static website and a pdf of your resume, allowing easy customization through provided assets.
 - Deploys and publishes website to branch `gh-pages`.
