@@ -25,7 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         playwright install chromium
-    - name: run application
+    - name: Run application
       run: |
         python app.py
     - name: Deploy to GH Pages
