@@ -3,7 +3,7 @@
 - Generates a static website and a pdf of your resume, allowing easy customization through provided assets.
 - Deploys and publishes website to branch `gh-pages`.
 
-Demo: https://disaa0.github.io/web-resume-template/
+Demo: https://disaa0.github.io/web-resume
 
 ## How to use
 1. Set up your own files in the `assets` folder.
