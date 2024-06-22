@@ -11,8 +11,8 @@ Demo: https://disaa0.github.io/web-resume
 4. Run `app.py` in your virtual environment.
 5. Files are generated to `dist` folder.
 6. Website is deployed to Github Pages using branch `gh-pages`
-7. You can access your website in https://`[github_username]`.github.io/`[repository_name]`
-   - Note: naming the repository `[github_username].github.io` will publish the website to https://`[github_username]`.github.io
+7. You can access your website in [https://`[github_username]`.github.io/`[repository_name]`](#)
+   - Note: naming the repository [`[github_username].github.io`](#) will publish the website to [https://`[github_username]`.github.io](#)
 
 ## Installation
 
