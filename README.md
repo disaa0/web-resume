@@ -31,5 +31,5 @@ Demo: https://disaa0.github.io/web-resume
 
     ```sh
     pip install -r requirements.txt
-    playwright install
+    playwright install chromium
     ```
