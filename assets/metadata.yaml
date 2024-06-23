@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/yamllint.json
-name: Joe Doe
+name: John Doe
 title: Software Engineer
-pdf_name: joe-doe.pdf
+pdf_name: john-doe.pdf
 cv_link: disaa0.github.io/web-resume/
 facts:
     - title: Residence
@@ -9,17 +9,17 @@ facts:
       icon: <i class="fa fa-home fact-icon">
       text: New York
     - title: GitHub
-      url: https://github.com/joedoe
+      url: https://github.com/johndoe
       icon: <i class="fa-brands fa-github fact-icon">
-      text: joe_doe
+      text: john_doe
     - title: LinkedIn
-      url: https://www.linkedin.com/in/joedoe/
+      url: https://www.linkedin.com/in/johndoe/
       icon: <i class="fa-brands fa-linkedin fact-icon">
-      text: joe_doe
+      text: john_doe
     - title: Email
-      url: mailto:joedoe@mail.com
+      url: mailto:johndoe@mail.com
       icon: <i class="fa fa-envelope fact-icon">
-      text: joe@mail.com
+      text: john@mail.com
 
 jobs:
   - position: Software Developer
