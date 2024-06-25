@@ -35,7 +35,7 @@
                             <span class="screen"><a href="{{ data.pdf_name }}"><i
                                         class="far fa-file-pdf"></i>Download PDF
                                     version</a></span>
-                            <span class="print">Up-to-date version of CV is available at <a
+                            <span class="print">Up-to-date version of resume is available at <a
                                     href="https://{{ data.resume_link }}" class="text-nowrap"><i class=""
                                         aria-hidden="true"></i>{{ data.resume_link }}</a></span>
                         </p>
@@ -106,7 +106,7 @@
                         <li>
                             <p class="mb-0">{{ project.title }}:
                                 {{ project.contents }}
-                                {{ project.git }}
+                                {{ project.link }}
                             </p>
                             <div>
                                 {% for skill in project.skills %}
@@ -154,6 +154,29 @@
             </div>
             {% endif %}
         </div>
+        {% if data.personal_projects %}
+        <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+            <h2 class="mb-3 print-h2 mb-print-05">Projects</h2>
+            <ul>
+                {% for project in data.personal_projects %}
+                <li>
+                    <div class="mb-0">
+                        <b>{{ project.title }}</b>
+                    </div>
+                    <div class="mb-0">
+                        {{ project.description }}
+                        {{ project.link}}
+                    <div>
+                        {% for skill in project.skills %}
+                        <span class="badge text-body border border-1">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            
+        </div>
+        {% endif %}
+ 
 </body>
-
 </html>

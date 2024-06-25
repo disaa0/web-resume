@@ -23,7 +23,7 @@ facts:
 
 jobs:
   - position: Software Developer
-    period: June 2020 - Present
+    period: Jun 2020 - Present
     company: Tech Solutions Inc.
     bullet_points:
       - Developed and maintained web applications using Python and Django.
@@ -34,7 +34,7 @@ jobs:
       - Django
       - Jenkins
   - position: Junior Developer
-    period: January 2018 - May 2020
+    period: Jan 2018 - May 2020
     company: CodeCraft
     bullet_points:
       - Assisted in the development of internal tools using JavaScript and Node.js.
@@ -47,23 +47,30 @@ jobs:
 
 educations:
     - degree: Bachelor of Science in Computer Science
-      period: September 2014 - June 2018
+      period: Sep 2014 - Jun 2018
       university: University of Example
       projects: 
         - title: Inventory Management System
           position: Lead Developer
-          period: January 2017 - May 2017
+          period: Jan 2017 - May 2017
           skills: ['MongoDB', 'Python', 'React']
-          git: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
+          link: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
           contents: 
             I developed an inventory management system for a local business, improving their inventory tracking and reporting capabilities.
         - title: Personal Portfolio Website
           position: Developer
-          period: September 2016 - December 2016
+          period: Sep 2016 - Dec 2016
           skills: ['Python', 'Flask']
-          git: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
+          link: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
           contents:
             I developed my personal portfolio website, showcasing my projects and skills.
+
+personal_projects:
+    - title: Personal Website
+      period: January 2023 - Present
+      description: A responsive website designed to present my work and projects. This website is built using HTML, CSS, and JavaScript, and is designed to be responsive and accessible on various devices.
+      skills: ['HTML', 'CSS', 'JavaScript']
+      link: '<a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"><i class="fa-brands fa-github"></i></a>'
 
 skills:
     - Strong problem-solving skills and ability to work in a team environment.
