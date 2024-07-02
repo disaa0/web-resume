@@ -91,6 +91,7 @@ Run `python app.py` to generate your resume. This will:
 2. Enable GitHub Pages in your repository settings
 3. Set the source to the `gh-pages` branch
 4. Your resume will be available at `https://[username].github.io/[repository-name]`
+- Note: naming the repository [`[github_username].github.io`](#) will publish the website to [https://`[github_username]`.github.io](#)
 
 ## Templates
 
