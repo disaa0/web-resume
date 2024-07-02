@@ -60,18 +60,18 @@ educations:
       period: Sep 2014 - Jun 2018
       university: University of Example
       projects: 
-        - title: Inventory Management System
-          skills: ['MongoDB', 'Python', 'React']
-          link: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
-          contents: 
-            I developed an inventory management system for a local business, improving their inventory tracking and reporting capabilities.
-        - title: Personal Portfolio Website
-          position: Developer
-          period: Sep 2016 - Dec 2016
-          skills: ['Python', 'Flask']
-          link: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
-          contents:
-            I developed my personal portfolio website, showcasing my projects and skills.
+        # - title: Inventory Management System
+        #   skills: ['MongoDB', 'Python', 'React']
+        #   link: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
+        #   contents: 
+        #     I developed an inventory management system for a local business, improving their inventory tracking and reporting capabilities.
+        # - title: Personal Portfolio Website
+        #   position: Developer
+        #   period: Sep 2016 - Dec 2016
+        #   skills: ['Python', 'Flask']
+        #   link: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
+        #   contents:
+        #     I developed my personal portfolio website, showcasing my projects and skills.
       relevant_courses: CS 101 - Introduction to CS, CS 201 - Data Structures and Algorithms, CS 301 - Computer Organization and Architecture.
 
 personal_projects:

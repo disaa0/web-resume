@@ -199,37 +199,6 @@
             </div>
         </header>
 
-        {% if data.jobs %}
-        <section class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-            <h2 class="mb-3">Professional Experience</h2>
-            {% for job in data.jobs %}
-            <div class="row mb-3">
-                <div class="col-auto pt-1">
-                    {{ job.period }}
-                </div>
-                <div class="col-9">
-                    <h3 class="fs-4 fw-normal mb-0">{{ job.position }}</h3>
-                    <div>
-                        <b>{{ job.company }}</b>
-                    </div>
-                    <ul class="mb-0">
-                        {% for bp in job.bullet_points %}
-                        <li>
-                            <p class="mb-0">{{ bp }}</p>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <div>
-                        {% for tech in job.technology %}
-                        <span class="badge text-body border border-1">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </section>
-        {% endif %}
-
         {% if data.educations %}
         <section class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
             <h2 class="mb-3">Education</h2>
@@ -270,9 +239,39 @@
         </section>
         {% endif %}
 
+        {% if data.jobs %}
+        <section class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+            <h2 class="mb-3">Professional Experience</h2>
+            {% for job in data.jobs %}
+            <div class="row mb-3">
+                <div class="col-auto pt-1">
+                    {{ job.period }}
+                </div>
+                <div class="col-9">
+                    <h3 class="fs-4 fw-normal mb-0">{{ job.position }}</h3>
+                    <div>
+                        <b>{{ job.company }}</b>
+                    </div>
+                    <ul class="mb-0">
+                        {% for bp in job.bullet_points %}
+                        <li>
+                            <p class="mb-0">{{ bp }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div>
+                        {% for tech in job.technology %}
+                        <span class="badge text-body border border-1">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
         {% if data.skills %}
-        <section
-            class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <section class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
             <div>
                 <h2 class="mb-3">Skills</h2>
                 <ul>
@@ -285,9 +284,9 @@
             </div>
         </section>
         {% endif %}
+
         {% if data.tech_skills %}
-        <section
-            class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
+        <section class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
             <div class="print-single-row">
                 <h2 class="mb-3">Technical Skills</h2>
                 <ul>
