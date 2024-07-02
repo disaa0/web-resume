@@ -114,10 +114,7 @@ To select a template, update the `template` field in `metadata/metadata.yaml`:
 
 ```yaml
 template: modern.html  # or formal.html
-```
-
-[... rest of the README remains unchanged ...]
-
+``
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
