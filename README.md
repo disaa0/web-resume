@@ -92,12 +92,6 @@ Run `python app.py` to generate your resume. This will:
 3. Set the source to the `gh-pages` branch
 4. Your resume will be available at `https://[username].github.io/[repository-name]`
 
-# Web Resume Builder
-
-A powerful and flexible web-based resume generator using Python, Jinja2, and Playwright.
-
-[... previous sections remain unchanged ...]
-
 ## Templates
 
 Choose from the selection of templates to create your resume.
