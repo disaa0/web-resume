@@ -100,7 +100,7 @@ A powerful and flexible web-based resume generator using Python, Jinja2, and Pla
 
 ## Templates
 
-Choose from our selection of professional templates to create your perfect resume.
+Choose from the selection of templates to create your resume.
 
 ### Formal Template
 
