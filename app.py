@@ -26,8 +26,7 @@ def write_html(file: str, output_path: str):
     with open(output_path + 'index.html', 'w') as f:
         f.write(file)
 
-def copy_assets(assets_path: str, output_path: str):
-    assets = ["photo.jpg", "favicon.ico", "styles.css"]
+def copy_assets(assets:list, assets_path: str, output_path: str):
     for asset in assets:
         source_path = assets_path + asset
         destination_path = output_path + asset
@@ -45,10 +44,10 @@ async def url_to_pdf(url, output_path):
             path=output_path,
             format='A4',
             margin={
-                'top': '2.54cm',
-                'right': '2.54cm',
-                'bottom': '2.54cm',
-                'left': '2.54cm'
+                'top': '0.5in',
+                'right': '0.5in',
+                'bottom': '0.5in',
+                'left': '0.5in'
             },
             print_background=True,
             
@@ -58,13 +57,13 @@ async def url_to_pdf(url, output_path):
 assets_path = "./assets/"
 output_path = "./dist/"
 templates_path = "./templates/"
+
 if __name__ == "__main__":
 
-    template = env.get_template("index.html")
-    data = read_data('assets/metadata.yaml')
+    data = read_data('metadata/metadata.yaml')
+    template = env.get_template(data["template"])
     updated = get_updated()
-    pdf_name = data["pdf_name"]
-
+ 
     resume = template.render(data=data, updated=updated)
 
     remove_dir(output_path)
@@ -72,7 +71,18 @@ if __name__ == "__main__":
 
     write_html (resume, output_path)
 
-    copy_assets(assets_path, output_path)
+
+    assets = []
+    if (data["use_photo"]):
+        assets.append(data["photo"])
+
+    if (data["use_favicon"]):
+        assets.append(data["favicon"])
+
+    copy_assets(assets, assets_path, output_path)
 
     index_path = os.path.abspath(output_path+'index.html')
-    asyncio.run(url_to_pdf(index_path, output_path=output_path + pdf_name))
+    
+    if (data["pdf_generation"] == True):
+        pdf_name = data["pdf_name"]
+        asyncio.run(url_to_pdf(index_path, output_path=output_path + pdf_name))

@@ -1,25 +1,35 @@
 # yaml-language-server: $schema=https://json.schemastore.org/yamllint.json
-name: John Doe
+
+#Configuration
+template: formal.html #Located in ./templates
+use_photo: false
+photo: photo.png
+use_favicon: true
+favicon: favicon.ico
+pdf_generation: true
+pdf_name: jane-doe.pdf
+
+#Metadata
+name: Jane Doe
 title: Software Engineer
-pdf_name: john-doe.pdf
 resume_link: disaa0.github.io/web-resume/
 facts:
     - title: Residence
       url: https://maps.app.goo.gl/UCupEfpjguBUrz1D9
-      icon: <i class="fa fa-home fact-icon">
+      icon: <i class="fa fa-home fact-icon"></i>
       text: New York
     - title: GitHub
-      url: https://github.com/johndoe
-      icon: <i class="fa-brands fa-github fact-icon">
-      text: john_doe
+      url: https://github.com/janedoe
+      icon: <i class="fa-brands fa-github fact-icon"></i>
+      text: jane_doe
     - title: LinkedIn
-      url: https://www.linkedin.com/in/johndoe/
-      icon: <i class="fa-brands fa-linkedin fact-icon">
-      text: john_doe
+      url: https://www.linkedin.com/in/janedoe/
+      icon: <i class="fa-brands fa-linkedin fact-icon"></i>
+      text: jane_doe
     - title: Email
-      url: mailto:johndoe@mail.com
-      icon: <i class="fa fa-envelope fact-icon">
-      text: john@mail.com
+      url: mailto:janedoe@mail.com
+      icon: <i class="fa fa-envelope fact-icon"></i>
+      text: jane@mail.com
 
 jobs:
   - position: Software Developer
@@ -51,8 +61,6 @@ educations:
       university: University of Example
       projects: 
         - title: Inventory Management System
-          position: Lead Developer
-          period: Jan 2017 - May 2017
           skills: ['MongoDB', 'Python', 'React']
           link: '<a href="https://github.com/user/repo"> <i class="fa-brands fa-github"></i> </a>'
           contents: 
@@ -64,6 +72,7 @@ educations:
           link: '<a href="https://github.com/user/repo"><i class="fa-brands fa-github"></i></a>'
           contents:
             I developed my personal portfolio website, showcasing my projects and skills.
+      relevant_courses: CS 101 - Introduction to CS, CS 201 - Data Structures and Algorithms, CS 301 - Computer Organization and Architecture.
 
 personal_projects:
     - title: Personal Website
@@ -84,4 +93,4 @@ tech_skills:
     - title: Version Control
       text: Git, GitHub
     - title: Languages
-      text: 'Spanish: Native, English: Professional Fluency'
+      text: 'Spanish, English'

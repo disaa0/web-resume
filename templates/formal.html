@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - {{ data.title }}</title>
+    <link rel="icon" href="{{ data.favicon }}" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: var(--bs-light);
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 0 20px; 
+        }
+
+        .tech-tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .section-title {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+        .job, .education-item, .project {
+            margin-bottom: 0.75rem;
+        }
+        .job h4, .education-item h4, .project h4 {
+            margin-bottom: 0.25rem;
+        }
+        ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        a {
+                color: black !important;
+        }
+
+        @media screen and (min-width: 768px) {
+            .two-column {
+                column-count: 1;
+                column-gap: 2rem;
+            }
+        }
+        @media print {
+            .screen { display: none !important; }
+            .print { display: block !important; }
+            body { 
+                font-size: 10pt; 
+                line-height: 1.2; 
+                background-color: white;
+                color: black;
+            }
+            .container { 
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            h1 { font-size: 18pt !important; margin-bottom: 0.5rem !important; }
+            h2 { font-size: 14pt !important; margin-bottom: 1rem !important; }
+            h3 { font-size: 12pt !important; margin-bottom: 0.5rem !important; }
+            h4 { font-size: 11pt !important; margin-bottom: 0.2rem !important; }
+            p, li { font-size: 9pt !important; margin-bottom: 0.2rem !important; }
+            .tech-tag { 
+                border: 1px solid #2c3e50;
+                font-size: 7pt !important;
+                padding: 1px 4px !important;
+            }
+            a {
+                text-decoration:underline !important;
+                color: black !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+                margin-bottom: 0.5rem !important;
+            }
+            ul { 
+                padding-left: 1rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+            .job, .education-item, .project {
+                margin-bottom: 0.5rem !important;
+            }
+            .section-title {
+                border-bottom: 1px solid #000 !important;
+                padding-bottom: 0.2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .two-column {
+                column-count: 1;
+                column-gap: 1rem;
+            }
+
+
+            .mb-3 { margin-bottom: 0.8rem !important; }
+
+            .mb-4 { margin-bottom: 0.5rem !important; }
+            .my-4 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
+        }
+        @media not print {
+            .print{
+                display: none;
+            }
+
+            .container {
+                background-color: var(--bs-white);
+                box-shadow: var(--bs-box-shadow);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center py-3">
+            <h1>{{ data.name }}</h1>
+            <h2 class="text-muted">{{ data.title }}</h2>
+        </header>
+
+        {% if data.use_photo %}
+        <section class="photo-container text-center mb-3 screen">
+            <img src="{{ data.photo }}" class="rounded-circle" alt="Personal photo" style="max-width: 20%;">
+        </section>
+        {% endif %}
+
+        {% if data.facts %}
+        <section class="facts d-flex justify-content-center flex-wrap mb-3">
+            {% for fact in data.facts %}
+            <div class="fact mx-2">
+                <a href="{{ fact.url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    {{ fact.icon | safe }}
+                    <span class="fact-text">{{ fact.text }}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        <main>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if data.educations %}
+                    <section class="education mb-3">
+                        <h3 class="section-title">Education</h3>
+                        {% for edu in data.educations %}
+                        <div class="education-item">
+                            <h4>{{ edu.degree }}</h4>
+                            <p class="text-muted mb-1">{{ edu.university }} | {{ edu.period }}</p>
+                            {% if edu.projects %}
+                            <b>Projects</b>
+                            {% for project in edu.projects %}
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="project mb-1">
+                                        <b>{{ project.title }}:</b>
+                                        {{ project.contents }} {{ project.link | safe }}
+                                        {% if project.skills %}
+                                        <div class="technologies mt-1">
+                                            {% for skill in project.skills %}
+                                            <span class="tech-tag">{{ skill }}</span>
+                                            {% endfor %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
+                            {% if edu.relevant_courses %}
+                            <span>
+                                <b>Relevant coursework: </b>
+                                {{ edu.relevant_courses }}
+                            </span>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+
+                    {% if data.jobs %}
+                    <section class="experience mb-3">
+                        <h3 class="section-title">Work Experience</h3>
+                        {% for job in data.jobs %}
+                        <div class="job">
+                            <h4>{{ job.position }}</h4>
+                            <p class="text-muted mb-1">{{ job.company }} | {{ job.period }}</p>
+                            {% if job.bullet_points %}
+                            <ul>
+                                {% for point in job.bullet_points %}
+                                <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% if job.technology %}
+                            <div class="technologies">
+                                {% for tech in job.technology %}
+                                <span class="tech-tag">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-12">
+                    {% if data.skills %}
+                    <section class="skills mb-3">
+                        <h3 class="section-title">Skills</h3>
+                        <ul class="list two-column">
+                            {% for skill in data.skills %}
+                            <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                    {% endif %}
+
+                    {% if data.tech_skills %}
+                    <section class="tech-skills mb-3">
+                        <h3 class="section-title">Technical Skills</h3>
+                        {% for skill in data.tech_skills %}
+                        <div class="tech-skill mb-1">
+                            <span>
+                                <b>{{ skill.title }}:</b>
+                                {{ skill.text }}
+                            </span>
+                        </div>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+
+                    {% if data.personal_projects %}
+                    <section class="projects mb-3">
+                        <h3 class="section-title">Projects</h3>
+                        {% for project in data.personal_projects %}
+                        <div class="project">
+                            <h4>{{ project.title }} {{ project.link | safe }}</h4>
+                            <p class="text-muted mb-1">{{ project.period }}</p>
+                            <p>{{ project.description }}</p>
+                            {% if project.skills %}
+                            <div class="technologies">
+                                {% for skill in project.skills %}
+                                <span class="tech-tag">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+        {% if data.pdf_generation %}
+        <section class="info text-end pb-3">
+            <p>
+                <span class="screen"><a href="{{ data.pdf_name }}" class="text-decoration-none"><i class="far fa-file-pdf"></i> Download PDF version</a></span>
+                <span class="print">Up-to-date version of resume is available at <a href="https://{{ data.resume_link }}" class="text-decoration-none">{{ data.resume_link }}</a></span>
+            </p>
+        </section>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
