@@ -13,39 +13,40 @@
         body {
             font-family: 'Roboto', Arial, sans-serif;
             background-color: var(--bs-light);
+            line-height: 1.4;
         }
 
         .container {
             max-width: 900px;
-            padding: 0 20px; 
+            padding: 0 30px;
         }
 
         .tech-tag {
             background-color: #ecf0f1;
             color: #2c3e50;
-            padding: 2px 8px;
+            padding: 1px 6px;
             border-radius: 3px;
-            font-size: 0.9em;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            font-size: 0.85em;
+            margin-right: 3px;
+            margin-bottom: 2px;
             display: inline-block;
         }
         .section-title {
             border-bottom: 2px solid #dee2e6;
-            padding-bottom: 0.25rem;
-            margin-bottom: 0.75rem;
+            padding-bottom: 0.1rem;
+            margin-bottom: 0.4rem;
         }
         .job, .education-item, .project {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.4rem;
         }
         .job h4, .education-item h4, .project h4 {
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
         }
         ul {
             padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
-        
+
         a {
                 color: black !important;
         }
@@ -88,19 +89,19 @@
 
             section {
                 page-break-inside: avoid;
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
-            ul { 
+            ul {
                 padding-left: 1rem !important;
                 margin-bottom: 0.25rem !important;
             }
             .job, .education-item, .project {
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
             .section-title {
                 border-bottom: 1px solid #000 !important;
                 padding-bottom: 0.2rem !important;
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
             .two-column {
                 column-count: 1;
@@ -108,7 +109,7 @@
             }
 
 
-            .mb-3 { margin-bottom: 0.8rem !important; }
+            .mb-3 { margin-bottom: 0.4rem !important; }
 
             .mb-4 { margin-bottom: 0.5rem !important; }
             .my-4 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
@@ -121,6 +122,7 @@
             .container {
                 background-color: var(--bs-white);
                 box-shadow: var(--bs-box-shadow);
+                padding: 20px 40px;
             }
         }
     </style>
@@ -128,9 +130,9 @@
 
 <body>
     <div class="container">
-        <header class="text-center py-3">
-            <h1>Jane Doe</h1>
-            <h2 class="text-muted">Software Engineer</h2>
+        <header class="text-center py-2">
+            <h1 class="mb-1">Jane Doe</h1>
+            <h2 class="text-muted mb-2">Software Engineer</h2>
         </header>
 
         
@@ -172,25 +174,6 @@
         <main>
             <div class="row">
                 <div class="col-md-12">
-                    
-                    <section class="education mb-3">
-                        <h3 class="section-title">Education</h3>
-                        
-                        <div class="education-item">
-                            <h4>Bachelor of Science in Computer Science</h4>
-                            <p class="text-muted mb-1">University of Example | Sep 2014 - Jun 2018</p>
-                            
-                            
-                            <span>
-                                <b>Relevant coursework: </b>
-                                CS 101 - Introduction to CS, CS 201 - Data Structures and Algorithms, CS 301 - Computer Organization and Architecture.
-                            </span>
-                            
-                        </div>
-                        
-                    </section>
-                    
-
                     
                     <section class="experience mb-3">
                         <h3 class="section-title">Work Experience</h3>
@@ -251,6 +234,25 @@
                         
                     </section>
                     
+
+                    
+                    <section class="education mb-3">
+                        <h3 class="section-title">Education</h3>
+                        
+                        <div class="education-item">
+                            <h4>Bachelor of Science in Computer Science</h4>
+                            <p class="text-muted mb-1">University of Example | Sep 2014 - Jun 2018</p>
+                            
+                            
+                            <span>
+                                <b>Relevant coursework: </b>
+                                CS 101 - Introduction to CS, CS 201 - Data Structures and Algorithms, CS 301 - Computer Organization and Architecture.
+                            </span>
+                            
+                        </div>
+                        
+                    </section>
+                    
                 </div>
 
                 <div class="col-md-12">
@@ -304,9 +306,12 @@
                         <h3 class="section-title">Projects</h3>
                         
                         <div class="project">
-                            <h4>Personal Website <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"><i class="fa-brands fa-github"></i></a></h4>
+                            <h4>Personal Website</h4>
                             <p class="text-muted mb-1">January 2023 - Present</p>
-                            <p>A responsive website designed to present my work and projects. This website is built using HTML, CSS, and JavaScript, and is designed to be responsive and accessible on various devices.</p>
+                            <p>
+                                A responsive website designed to present my work and projects. This website is built using HTML, CSS, and JavaScript, and is designed to be responsive and accessible on various devices.
+                                <a href="XXXXXXXXXXXXXXXXXXXXXXXXXXXX"><i class="fa-brands fa-github"></i></a>
+                            </p>
                             
                             <div class="technologies">
                                 
