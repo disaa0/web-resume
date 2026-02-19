@@ -13,39 +13,40 @@
         body {
             font-family: 'Roboto', Arial, sans-serif;
             background-color: var(--bs-light);
+            line-height: 1.4;
         }
 
         .container {
             max-width: 900px;
-            padding: 0 20px; 
+            padding: 0 30px;
         }
 
         .tech-tag {
             background-color: #ecf0f1;
             color: #2c3e50;
-            padding: 2px 8px;
+            padding: 1px 6px;
             border-radius: 3px;
-            font-size: 0.9em;
-            margin-right: 5px;
-            margin-bottom: 5px;
+            font-size: 0.85em;
+            margin-right: 3px;
+            margin-bottom: 2px;
             display: inline-block;
         }
         .section-title {
             border-bottom: 2px solid #dee2e6;
-            padding-bottom: 0.25rem;
-            margin-bottom: 0.75rem;
+            padding-bottom: 0.1rem;
+            margin-bottom: 0.4rem;
         }
         .job, .education-item, .project {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.4rem;
         }
         .job h4, .education-item h4, .project h4 {
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
         }
         ul {
             padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
-        
+
         a {
                 color: black !important;
         }
@@ -88,19 +89,19 @@
 
             section {
                 page-break-inside: avoid;
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
-            ul { 
+            ul {
                 padding-left: 1rem !important;
                 margin-bottom: 0.25rem !important;
             }
             .job, .education-item, .project {
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
             .section-title {
                 border-bottom: 1px solid #000 !important;
                 padding-bottom: 0.2rem !important;
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.3rem !important;
             }
             .two-column {
                 column-count: 1;
@@ -108,7 +109,7 @@
             }
 
 
-            .mb-3 { margin-bottom: 0.8rem !important; }
+            .mb-3 { margin-bottom: 0.4rem !important; }
 
             .mb-4 { margin-bottom: 0.5rem !important; }
             .my-4 { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
@@ -121,6 +122,7 @@
             .container {
                 background-color: var(--bs-white);
                 box-shadow: var(--bs-box-shadow);
+                padding: 20px 40px;
             }
         }
     </style>
@@ -128,9 +130,9 @@
 
 <body>
     <div class="container">
-        <header class="text-center py-3">
-            <h1>{{ data.name }}</h1>
-            <h2 class="text-muted">{{ data.title }}</h2>
+        <header class="text-center py-2">
+            <h1 class="mb-1">{{ data.name }}</h1>
+            <h2 class="text-muted mb-2">{{ data.title }}</h2>
         </header>
 
         {% if data.use_photo %}
@@ -155,44 +157,6 @@
         <main>
             <div class="row">
                 <div class="col-md-12">
-                    {% if data.educations %}
-                    <section class="education mb-3">
-                        <h3 class="section-title">Education</h3>
-                        {% for edu in data.educations %}
-                        <div class="education-item">
-                            <h4>{{ edu.degree }}</h4>
-                            <p class="text-muted mb-1">{{ edu.university }} | {{ edu.period }}</p>
-                            {% if edu.projects %}
-                            <b>Projects</b>
-                            {% for project in edu.projects %}
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="project mb-1">
-                                        <b>{{ project.title }}:</b>
-                                        {{ project.contents }} {{ project.link | safe }}
-                                        {% if project.skills %}
-                                        <div class="technologies mt-1">
-                                            {% for skill in project.skills %}
-                                            <span class="tech-tag">{{ skill }}</span>
-                                            {% endfor %}
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </li>
-                            </ul>
-                            {% endfor %}
-                            {% endif %}
-                            {% if edu.relevant_courses %}
-                            <span>
-                                <b>Relevant coursework: </b>
-                                {{ edu.relevant_courses }}
-                            </span>
-                            {% endif %}
-                        </div>
-                        {% endfor %}
-                    </section>
-                    {% endif %}
-
                     {% if data.jobs %}
                     <section class="experience mb-3">
                         <h3 class="section-title">Work Experience</h3>
@@ -213,6 +177,44 @@
                                 <span class="tech-tag">{{ tech }}</span>
                                 {% endfor %}
                             </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+
+                    {% if data.educations %}
+                    <section class="education mb-3">
+                        <h3 class="section-title">Education</h3>
+                        {% for edu in data.educations %}
+                        <div class="education-item">
+                            <h4>{{ edu.degree }}</h4>
+                            <p class="text-muted mb-1">{{ edu.university }} | {{ edu.period }}</p>
+                            {% if edu.projects %}
+                            <b>Projects</b>
+                            {% for project in edu.projects %}
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div class="project mb-1">
+                                        <b>{{ project.title }}:</b>
+                                        {{ project.contents }} {{ project.link | safe }}
+                                        {% if project.skills %}
+                                        <div class="technologies mt-0">
+                                            {% for skill in project.skills %}
+                                            <span class="tech-tag">{{ skill }}</span>
+                                            {% endfor %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            </ul>
+                            {% endfor %}
+                            {% endif %}
+                            {% if edu.relevant_courses %}
+                            <span>
+                                <b>Relevant coursework: </b>
+                                {{ edu.relevant_courses }}
+                            </span>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -251,9 +253,12 @@
                         <h3 class="section-title">Projects</h3>
                         {% for project in data.personal_projects %}
                         <div class="project">
-                            <h4>{{ project.title }} {{ project.link | safe }}</h4>
+                            <h4>{{ project.title }}</h4>
                             <p class="text-muted mb-1">{{ project.period }}</p>
-                            <p>{{ project.description }}</p>
+                            <p>
+                                {{ project.description }}
+                                {{ project.link | safe }}
+                            </p>
                             {% if project.skills %}
                             <div class="technologies">
                                 {% for skill in project.skills %}
